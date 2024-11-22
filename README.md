@@ -92,3 +92,62 @@ To install the required dependencies, use the following `pip` command:
 pip install torch torchvision tqdm matplotlib pillow numpy requests
 ```
 
+## Combined_Experimentation
+
+### This is for the zip file Combined_Testiing
+
+---
+
+1. **Table and Column Detection**:
+   - Utilizes a fine-tuned **Faster R-CNN** model to detect tables and their column structures in images.
+   - A **VGG-19-based segmentation** model is integrated to refine the table masks and extract precise column boundaries.
+
+2. **Line Boundary Detection**:
+   - Heuristic methods are applied to the column masks to identify individual line boundaries within the table.
+
+3. **Caption Extraction**:
+   - Based on the detected table, the corresponding caption is located heuristically to ensure association with the correct table.
+
+4. **Optical Character Recognition (OCR)**:
+   - After segmenting the table into rows and columns, **Pytesseract** is employed to extract textual data from each cell, generating a structured representation of the table.
+
+5. **Output**:
+   - The final output includes:
+     - The **detected table with column masks and line boundaries visualized**.
+     - A **textual representation of the table**.
+     - The **table caption**.
+
+---
+
+Please correctly download the models from above links and load them .
+
+### Dependencies
+
+The project requires the following Python libraries and tools:
+
+### Python Version
+- Python 3.x
+
+### Libraries and Frameworks
+- **NumPy**: For numerical computations and array manipulations.
+- **Pandas**: For data analysis and manipulation.
+- **TensorFlow/Keras**: For building and training deep learning models.
+- **PyTorch/Torchvision**: For object detection using pre-trained Faster R-CNN models.
+- **Pillow (PIL)**: For image processing and manipulation.
+- **Matplotlib**: For visualization of images, bounding boxes, and results.
+- **OpenCV (cv2)**: For advanced image processing tasks.
+- **Pytesseract**: For optical character recognition (OCR) to extract text from images.
+- **ReportLab**: For generating PDFs programmatically.
+- **Ast**: For safely evaluating Python expressions (e.g., for parsing annotations).
+- **Re**: For working with regular expressions.
+
+---
+
+### Installation
+To install the required dependencies, run the following command:
+
+```bash
+pip install numpy pandas tensorflow keras torch torchvision pillow matplotlib opencv-python pytesseract reportlab
+```
+
+
