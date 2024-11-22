@@ -256,3 +256,55 @@ streamlit run main.py
 After running the application, Streamlit will provide a link (e.g., http://localhost:8501).
 Open this link in your browser to access the application.
 
+# Novelty Code :: CellNet: Semantic Segmentation for Cell Mask Prediction
+
+This project implements a semantic segmentation model using a pre-trained **VGG-19** encoder and a custom decoder to predict cell masks. The pipeline includes data preprocessing, a TensorFlow-based data pipeline, and a fully functional encoder-decoder architecture.
+
+---
+
+## Features
+
+### **Data Preprocessing**
+- Processes images and corresponding masks for training and validation.
+- Resizes images and masks to a uniform size of `1024x1024` and normalizes pixel values to `[0, 1]`.
+
+### **Data Pipeline**
+- Efficiently maps and caches datasets for training and testing.
+- Supports dynamic shuffling, batching, and prefetching for improved performance.
+
+### **Encoder-Decoder Architecture**
+- **Encoder**: Utilizes the pre-trained **VGG-19** model up to the bottleneck layer.
+- **Decoder**: Implements a custom decoder (`cell_decoder`) for up-sampling and mask prediction.
+
+### **Visualization**
+- The model architecture is visualized with all layers and shapes using TensorFlow's `plot_model`.
+
+---
+
+## Requirements
+
+### **Python Version**
+- Python 3.x
+
+### **Libraries**
+Install the following Python libraries using `pip`:
+```bash
+pip install tensorflow pandas numpy matplotlib pillow opencv-python
+```
+
+### Directory Strucutre
+
+```bash
+.
+├── input/                              # Input images and masks directory
+│   ├── val_1/                          # Input validation images
+│   ├── output_mask_1/                  # Corresponding output masks
+├── output/                             # Directory to save model outputs
+├── main.py                             # Main script to define and train the model
+├── README.md                           # Project documentation
+
+```
+For the val_1 and output_mask_1 data set please download from the link https://drive.google.com/file/d/1RY0KA0URu83mEoa9tKDKBTiSXZ3l7pBz/view?usp=sharing
+
+Also while testing we need to input the model please download from the link
+https://drive.google.com/file/d/1lQk4pXr77d2dnnlSC7GqG5BmueJMXuId/view?usp=sharing
