@@ -150,4 +150,109 @@ To install the required dependencies, run the following command:
 pip install numpy pandas tensorflow keras torch torchvision pillow matplotlib opencv-python pytesseract reportlab
 ```
 
+# Document Layout Analysis with Object Detection and OCR 
+##  This is for the interface code
+
+This project provides a comprehensive pipeline for analyzing document layouts, detecting tables and figures, extracting captions, and performing OCR to structure textual data from documents. It uses:
+
+- **Faster R-CNN**: For object detection to identify tables, figures, and text.
+- **VGG-19**: For refining masks and segmenting columns in tables.
+- **Pytesseract**: For Optical Character Recognition (OCR) to extract text.
+- **Streamlit**: For creating an interactive web interface.
+
+---
+
+## Features
+
+### **PDF to Image Conversion**
+- Converts uploaded PDFs into high-resolution images for processing.
+
+### **Object Detection**
+- Detects tables, figures, and associated captions using Faster R-CNN.
+
+### **Table Mask Refinement**
+- Refines table masks and detects column boundaries using VGG-19.
+
+### **OCR Integration**
+- Extracts structured textual data from tables and captions using Pytesseract.
+
+### **Interactive Interface**
+- Provides an intuitive web-based interface using Streamlit for uploading PDFs and viewing results.
+
+---
+
+## Requirements
+
+### **Python Version**
+- Python 3.x
+
+### **Libraries**
+The following Python libraries are required:
+
+- `torch`
+- `torchvision`
+- `tensorflow`
+- `keras`
+- `pandas`
+- `numpy`
+- `Pillow`
+- `matplotlib`
+- `cv2` (OpenCV)
+- `pytesseract`
+- `pdf2image`
+- `streamlit`
+
+---
+
+## Installation
+
+Install the required dependencies using `pip`:
+
+```bash
+pip install torch torchvision tensorflow keras pandas numpy pillow matplotlib opencv-python pytesseract pdf2image streamlit
+```
+## The Directory Structure of Output
+
+So for Faster RCNN model and Vgg Model must correctly downloaded from above links and placed in the directory like this.
+
+```bash 
+├── Faster_RCNN/                # Directory containing the Faster R-CNN model
+│   └── best_model (1).pth
+├── VGG_19/                     # Directory containing the VGG-19 model
+│   └── mymodel_277.keras
+├── test_images/                # Directory where PDF pages will be saved as images
+├── output/                     # Directory to store processed results
+│   ├── tables/                 # Directory to store table images and CSVs
+│   ├── figures/                # Directory to store figure images and captions
+├── bounding_boxes.csv          # File containing detected bounding boxes
+├── main.py                     # Main application script
+└── README.md                   # Project documentation
+
+```
+
+### Usage
+#### Step 1: Clone the Repository
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/document-layout-analysis.git
+cd document-layout-analysis
+```
+#### Step 2: Install Dependencies
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+#### Step 3: Run the Application
+Run the Streamlit application using the following command:
+
+```bash
+streamlit run main.py
+```
+
+#### Step 4: Access the Web Interface
+After running the application, Streamlit will provide a link (e.g., http://localhost:8501).
+Open this link in your browser to access the application.
 
