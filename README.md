@@ -2,12 +2,17 @@
 IE 643 project final
 ## VGG-19 training code
 ### The directory explaination for VGG_19
+```text
 These code do EDA for preparing the data 
+The final data created through these is given in link to the drive
+https://drive.google.com/file/d/1UD4E-rWnReUaTMp1gsdsyhwyyM8ZJuNA/view?usp=sharing . So this has a folder marmot_usuals which contains the images of documents , marmot_columns contain the column mask and marmot_table contain the table mask.
+```
+```bash
 ./Data_Extraction/eda_1.py
 ./Data_Extraction/eda_2.py
 ./Data_Extraction/eda_3.py
-The final data created through these is given in link to the drive
-https://drive.google.com/file/d/1UD4E-rWnReUaTMp1gsdsyhwyyM8ZJuNA/view?usp=sharing
+```
+
 So this has a folder marmot_usuals which contains the images of documents , marmot_columns contain the column mask and marmot_table contain the table mask.
 
 ./Some_Results/Table_Test_1.ipynb
