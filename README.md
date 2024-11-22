@@ -1,7 +1,7 @@
 # IE-643-Document-Layout-analysis
 IE 643 project final
 ## VGG-19 training code
-The directory explaination for VGG_19
+### The directory explaination for VGG_19
 These code do EDA for preparing the data 
 ./Data_Extraction/eda_1.py
 ./Data_Extraction/eda_2.py
